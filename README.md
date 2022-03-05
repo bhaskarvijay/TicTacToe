@@ -1,6 +1,6 @@
 # tictactoe_3d
 
-A new Flutter project.
+All Variants of Tic Tac Toe game.
 
 ## Getting Started
 
