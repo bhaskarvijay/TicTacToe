@@ -36,18 +36,18 @@ class _GameScreenState extends State<GameScreen> {
   void checkWinner(){
     if(gridList[0] == gridList[1] && gridList[1] == gridList[2] && gridList[0] != ""){
       if(gridList[0] == "o"){
-        winner = "Player 1";
+        winner = "Player 1 won The Game";
       }else{
-        winner = "Player2";
+        winner = "Player 1 won The Game";
       }
       winnerMessage(winner);
       // isGameOver = true;
     }
     else if(gridList[3] == gridList[4] && gridList[4] == gridList[5] && gridList[3] != ""){
       if(gridList[3] == "o"){
-        winner = "Player 1";
+        winner = "Player 1 won The Game";
       }else{
-        winner = "Player2";
+        winner = "Player 1 won The Game";
       }
 
       winnerMessage(winner);
@@ -55,41 +55,41 @@ class _GameScreenState extends State<GameScreen> {
     }
     else if(gridList[6] == gridList[7] && gridList[7] == gridList[8] && gridList[6] != ""){
       if(gridList[6] == "o"){
-        winner = "Player 1";
+        winner = "Player 1 won The Game";
       }else{
-        winner = "Player2";
+        winner = "Player 1 won The Game";
       }
       winnerMessage(winner);
     }
     else if(gridList[0] == gridList[3] && gridList[3] == gridList[6] && gridList[0] != ""){
       if(gridList[0] == "o"){
-        winner = "Player 1";
+        winner = "Player 1 won The Game";
       }else{
-        winner = "Player2";
+        winner = "Player 1 won The Game";
       }
       winnerMessage(winner);
     }
     else if(gridList[1] == gridList[4] && gridList[4] == gridList[7] && gridList[1] != ""){
       if(gridList[1] == "o"){
-        winner = "Player 1";
+        winner = "Player 1 won The Game";
       }else{
-        winner = "Player2";
+        winner = "Player 1 won The Game";
       }
       winnerMessage(winner);
     }
     else if(gridList[2] == gridList[5] && gridList[5] == gridList[8] && gridList[2] != ""){
       if(gridList[2] == "o"){
-        winner = "Player 1";
+        winner = "Player 1 won The Game";
       }else{
-        winner = "Player2";
+        winner = "Player 1 won The Game";
       }
       winnerMessage(winner);
     }
     else if(gridList[0] == gridList[4] && gridList[4] == gridList[8] && gridList[0] != ""){
       if(gridList[0] == "o"){
-        winner = "Player 1";
+        winner = "Player 1 won The Game";
       }else{
-        winner = "Player2";
+        winner = "Player 2 won The Game";
       }
       winnerMessage(winner);
     }
@@ -115,7 +115,7 @@ class _GameScreenState extends State<GameScreen> {
       desc: winner,
       buttons: [
         DialogButton(
-          child: Text(
+          child: const Text(
             "Restart",
             style: TextStyle(color: Colors.white, fontSize: 20),
           ),
@@ -135,12 +135,12 @@ class _GameScreenState extends State<GameScreen> {
           color: Color.fromRGBO(0, 179, 134, 1.0),
         ),
         DialogButton(
-          child: Text(
+          child: const Text(
             "Cancel",
             style: TextStyle(color: Colors.white, fontSize: 20),
           ),
           onPressed: () => Navigator.pop(context),
-          gradient: LinearGradient(colors: [
+          gradient: const LinearGradient(colors: [
             Color.fromRGBO(116, 116, 191, 1.0),
             Color.fromRGBO(52, 138, 199, 1.0)
           ]),
@@ -169,11 +169,12 @@ class _GameScreenState extends State<GameScreen> {
             children: [
               Expanded(
                 child: Container(
-                  padding: EdgeInsets.only(top: 30.0),
-                  child: Text("Tic Tac Toe", style: TextStyle(
+                  padding: const EdgeInsets.only(top: 30.0),
+                  child: const Text("Tic Tac Toe", style: TextStyle(
                     fontSize: 30.0,
                     fontWeight: FontWeight.w700,
                     color: Colors.white,
+                    fontFamily: 'RockSalt'
                   ),
                     textAlign: TextAlign.center,),
                 ),
@@ -181,8 +182,8 @@ class _GameScreenState extends State<GameScreen> {
               Expanded(
                 flex: 3,
                 child: GridView.builder(
-                  padding: EdgeInsets.all(20.0),
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  // padding: EdgeInsets.all(20.0),
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 3,
                   ),
                   itemCount: gridList.length,
@@ -193,20 +194,19 @@ class _GameScreenState extends State<GameScreen> {
                       },
                       child: Container(
                           margin: EdgeInsets.all(5.0),
-                          padding: EdgeInsets.all(10),
+                          padding: EdgeInsets.all(20),
                           decoration: BoxDecoration(
-                            border: Border.all(width: 3.0, color: Colors.white),
+                            // border: Border.all(width: 3.0, color: Colors.white),
                             borderRadius: BorderRadius.circular(30.0),
                             color: gridColor[index],
                             // color: gridList[index] == 'x' ? Colors.yellow :
                           ),
-                          child: Center(
-                            child: Text(gridList[index], style: TextStyle(
-                              fontSize: 50,
-                              color: Colors.white,
-                              fontWeight: FontWeight.w500,
-                            ),),
-                          )
+                          child: Text(gridList[index], style: const TextStyle(
+                            fontSize: 50,
+                            color: Colors.white,
+                            fontWeight: FontWeight.w500,
+                            // fontFamily: 'RockSalt',
+                          ),)
                       ),
                     );
                   },
@@ -226,7 +226,8 @@ class _GameScreenState extends State<GameScreen> {
                           child: Text("o", style: TextStyle(
                               fontSize: 50.0,
                               color: isOTurn ? Colors.white: Colors.white12,
-                              fontWeight: FontWeight.w700
+                              fontWeight: FontWeight.w700,
+                              // fontFamily: 'RockSalt',
                           ), textAlign: TextAlign.center,),
                         ),
                       ),
@@ -239,7 +240,8 @@ class _GameScreenState extends State<GameScreen> {
                           child: Text("x", style: TextStyle(
                               fontSize: 50.0,
                               color: isOTurn ? Colors.white12: Colors.white,
-                              fontWeight: FontWeight.w700
+                              fontWeight: FontWeight.w700,
+                              // fontFamily: 'RockSalt',
                           ), textAlign: TextAlign.center,),
                         ),
                       ),
