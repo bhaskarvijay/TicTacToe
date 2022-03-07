@@ -1,4 +1,6 @@
 // import 'dart:html';
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 
@@ -17,6 +19,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.deepOrange,
       body: Container(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -26,20 +29,34 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
               mainAxisSize: MainAxisSize.min,
               children: <Widget>[
                 const SizedBox(width: 100.0, height: 100.0),
-                ElevatedButton(
-                  onPressed: (){
+                GestureDetector(
+                  onTap: (){
                     setState(() {
                       Navigator.pushNamed(context, GameScreen.id);
                     });
                   },
-                  child: Text('Play'),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15.0),
+                      color: Colors.pink
+                    ),
+                    // height: 100.0,
+                    child: Text('Play',
+                      style: TextStyle(
+                        fontSize: 30.0,
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontFamily: 'Monoton',
+                      ),
+                    ),
+                  ),
                   ),
                 const SizedBox(width: 20.0, height: 100.0),
                 DefaultTextStyle(
                   style: const TextStyle(
                     fontSize: 40.0,
-                    fontFamily: 'Horizon',
-                    color: Colors.deepOrange
+                    fontFamily: 'RockSalt',
+                    color: Colors.blue
                   ),
                   child: AnimatedTextKit(
                       animatedTexts: [
