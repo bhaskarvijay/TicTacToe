@@ -108,6 +108,11 @@ class _GameScreenState extends State<GameScreen> {
   }
   winnerMessage(winner){
     isGameOver = true;
+    gridList = ["", "", "", "","", "", "", "", "",];
+    gridColor = [Colors.white, Colors.white, Colors.white, Colors.white, Colors.white, Colors.white, Colors.white, Colors.white, Colors.white,];
+    isGameOver = false;
+    isOTurn = true;
+    backColor = gameBackgrounds[Random().nextInt(gameBackgrounds.length)];
     return Alert(
       context: context,
       type: AlertType.success,
@@ -121,12 +126,7 @@ class _GameScreenState extends State<GameScreen> {
           ),
           onPressed: (){
             setState(() {
-              gridList = ["", "", "", "","", "", "", "", "",];
-              gridColor = [Colors.white, Colors.white, Colors.white, Colors.white, Colors.white, Colors.white, Colors.white, Colors.white, Colors.white,];
-              isGameOver = false;
-              isOTurn = true;
               winner = null;
-              backColor = gameBackgrounds[Random().nextInt(gameBackgrounds.length)];
               Navigator.pop(context);
             });
 
@@ -201,12 +201,14 @@ class _GameScreenState extends State<GameScreen> {
                             color: gridColor[index],
                             // color: gridList[index] == 'x' ? Colors.yellow :
                           ),
-                          child: Text(gridList[index], style: const TextStyle(
-                            fontSize: 50,
-                            color: Colors.white,
-                            fontWeight: FontWeight.w500,
-                            // fontFamily: 'RockSalt',
-                          ),)
+                          child: Center(
+                            child: Text(gridList[index], style: const TextStyle(
+                              fontSize: 50,
+                              color: Colors.white,
+                              fontWeight: FontWeight.w500,
+                              // fontFamily: 'RockSalt',
+                            ),),
+                          )
                       ),
                     );
                   },
