@@ -4,7 +4,9 @@ All Variants of Tic Tac Toe game.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+Tic Tac Toe game created with Peasent User interface, winner message.
+
+<img src="/repository/assets/Welcome.png" alt="Game Image" title="Tic Tac Toe">
 
 A few resources to get you started if this is your first Flutter project:
 
