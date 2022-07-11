@@ -6,7 +6,7 @@ All Variants of Tic Tac Toe game.
 
 Tic Tac Toe game created with Peasent User interface, winner message.
 
-<img src="/repository/assets/Welcome.png" alt="Game Image" title="Tic Tac Toe">
+<img src="Screenshot_20220711-152629.jpg" width="20%" height="20%">
 
 A few resources to get you started if this is your first Flutter project:
 
